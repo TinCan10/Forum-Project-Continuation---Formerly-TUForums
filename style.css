@@ -1,0 +1,47 @@
+h1{
+    text-align: center;
+    color: black;
+    text-decoration: underline;
+}
+
+body{
+    background-color: gray;
+}
+
+.sideNav {
+    height: 100%;
+    width: 0;
+    position: fixed; 
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: gold;
+    padding-top: 60px;
+    
+}
+
+.sideNav a {
+    padding: 8px 8px 8px 40px;
+    font-size: 30px;
+    color: black; 
+    display: block; 
+    transition: 0.3s;
+}
+
+.sideNav a:hover{
+    color: gold;
+}
+
+.sideNav .closebtn{
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 40px;
+    margin-left: 50px;
+}
+
+#main {
+    margin-left: 0px;
+    padding: 20px; 
+    text-align: center;
+}

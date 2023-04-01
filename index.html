@@ -1,0 +1,65 @@
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>
+        Towson University Forums
+    </title>
+</head>
+
+<body>
+
+    <h1>
+        Welcome to the Towson University Forums!
+    </h1>
+    
+    <!---Side Nav bar that pushes content to the right-->
+
+    <div id="sideNav" class="sideNav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeSideBar()">X;</a>
+        <a href="#">Home</a>
+        <a href="#">Account Info</a>
+        <a href="#">Create Post</a>
+        <a href="#">Favorite Posts</a>
+        <a href="#">Site Rules</a>
+        <a href="#">Options</a>
+    </div>
+
+    <!---Button to open side nav bar-->
+    <span onclick="openSideBar()">Site Menu</span>
+
+     <!--Site content goes in here and other options-->   
+    <div id="main">
+
+
+        <p> 
+            Recent Posts:
+        </p>
+
+        <ul>
+            <li></li>
+            <li></li>
+        </ul>
+
+
+    </div>
+
+    <script>
+        function openSideBar() {
+            document.getElementById("sidNav").style.width = "250px"; 
+            document.getElementById("main").style.marginLeft = "250px"; 
+        }
+
+        function closeSideBar(){
+            document.getElementById("sidNav").style.width = "0px"; 
+            document.getElementById("main").style.marginLeft = "0px"; 
+        }
+    </script>
+
+</body>
+
+</html>
+
+
