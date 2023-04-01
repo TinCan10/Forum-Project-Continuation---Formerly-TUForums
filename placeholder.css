@@ -1,0 +1,40 @@
+.forum_head{
+    display: flex;
+    padding: 5px;
+    margin: 0px;
+    background-color: #ffB800;
+}
+.forum_head .sort_by{
+    flex: 25%;
+}
+.forum_head .sort_element{
+    flex: 5%;
+    font-weight: bold;
+}
+
+.forum_container{
+    padding: 5px;
+    margin: 0px;
+    background-color: #A59E98;
+}
+.forum_post{
+    display: flex;
+}
+.forum_post div{
+    padding: 5px;
+    margin: 2px;
+    background-color: #B0B98F;
+}
+
+.forum_post .post_name{
+    flex: 5%
+}
+.forum_post .post_title{
+    flex: 70%
+}
+.forum_post .post_subject{
+    flex: 20%
+}
+.forum_post .post_replies{
+    flex: 5%
+}
