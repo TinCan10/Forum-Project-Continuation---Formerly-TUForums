@@ -44,7 +44,11 @@
         var sort = params.get("sort");
         
         if(sort=="new"){
-            //sort_by_new(posts);
+            posts.sort((a,b)=>{
+            if(a.time_signature>b.time_signature){
+                return -1;
+            }
+        });
         }
         
 
@@ -59,15 +63,6 @@
             `
             container.innerHTML += row;
         }
-    }
-
-    
-    function sort_by_new(posts){
-        posts.sort((a,b)=>{
-            if(a.time_signature>b.time_signature){
-                return -1;
-            }
-        });
     }
     
 </script>
