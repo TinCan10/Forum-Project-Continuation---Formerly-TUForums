@@ -1,2 +1,2 @@
 # COSC484Group5
-This is Christopher Solano's code for the basic webpage of the TU Forum
+This is COSC484 Group 5's code for the TU Forum
