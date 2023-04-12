@@ -77,9 +77,9 @@
 
         //Code by Carmen Nash
         var forum_data = `{ "posts" : [
-            { "username" : "jane doe" , "title" : "cool title" , "subject" : "Philosopy", "replies" : "3", "time_signature":1},
-            { "username" : "john doe" , "title" : "cooler title" , "subject" : "Philosopy", "replies" : "5", "time_signature":2},
-            { "username" : "jane doe" , "title" : "coolest title" , "subject" : "Philosopy", "replies" : "15", "time_signature":3}
+            { "username" : "jane doe" , "title" : "cool title" , "subject" : "Philosopy", "replies" : 3, "time_signature":1},
+            { "username" : "john doe" , "title" : "cooler title" , "subject" : "Philosopy", "replies" : 5, "time_signature":2},
+            { "username" : "jane doe" , "title" : "coolest title" , "subject" : "Philosopy", "replies" : 15, "time_signature":3}
             ]}`;
         var parsed_data = JSON.parse(forum_data);
         var params = new URLSearchParams(document.location.search);
