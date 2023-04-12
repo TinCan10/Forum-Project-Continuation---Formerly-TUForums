@@ -50,11 +50,11 @@
                 <div name="sort_by">
                     Sort By: 
                 </div>
-                <div class="sort_element"><a href="placeholder.html?sort=new" id="sort_new">New</a></div>
-                <div class="sort_element"><a href="placeholder.html?sort=replies" id="sort_replies">Replies</a></div>
-                <div class="sort_element"><a href="placeholder.html?sort=old" id="sort_old">Old</a></div>
+                <div class="sort_element"><a href="index.html?sort=new" id="sort_new">New</a></div>
+                <div class="sort_element"><a href="index.html?sort=replies" id="sort_replies">Replies</a></div>
+                <div class="sort_element"><a href="index.html?sort=old" id="sort_old">Old</a></div>
                 <div class="sort_element">
-                    <label name="search">Search:</label>
+                    <label name="search" id="search">Search:</label>
                     <input type="text" name="search",id="sort_search">
                 </div>
             </div>
@@ -90,8 +90,12 @@
             var container = document.getElementById("forum_container");
             var sort = params.get("sort");
             
-            if(sort=="new"){
-                //sort_by_new(posts);
+            if(sort=="old"){
+                sort_by_old(posts);
+            } else if(sort=="replies"){
+                sort_by_replies(posts);
+            } else {
+                sort_by_new(posts);
             }
             
 
@@ -114,6 +118,23 @@
                 if(a.time_signature>b.time_signature){
                     return -1;
                 }
+                return 1;
+            });
+        }
+        function sort_by_replies(posts){
+            posts.sort((a,b)=>{
+                if(a.replies>b.replies){
+                    return -1;
+                }
+                return 1;
+            });
+        }
+        function sort_by_old(posts){
+            posts.sort((a,b)=>{
+                if(a.time_signature<b.time_signature){
+                    return -1;
+                }
+                return 1;
             });
         }
     </script>
