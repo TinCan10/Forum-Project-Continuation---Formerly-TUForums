@@ -31,7 +31,7 @@
             <div class="info">
                 <a href="#">Home</a>
                 <a href="#">Account Info</a>
-                <a href="#">Create Post</a>
+                <a href="createPost.html">Create Post</a>
                 <a href="#">Favorite Posts</a>
                 <a href="#">Site Rules</a>
                 <a href="#">Options</a>
@@ -81,6 +81,8 @@
             { "username" : "john doe" , "title" : "cooler title" , "subject" : "Philosopy", "replies" : 5, "time_signature":2},
             { "username" : "jane doe" , "title" : "coolest title" , "subject" : "Philosopy", "replies" : 15, "time_signature":3}
             ]}`;
+        if(localStorage.getItem('forum_data'))
+            forum_data = localStorage.getItem('forum_data');
         var parsed_data = JSON.parse(forum_data);
         var params = new URLSearchParams(document.location.search);
 
