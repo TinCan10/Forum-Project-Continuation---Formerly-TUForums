@@ -1,14 +1,16 @@
-var MongoClient = require("mongodb").MongoClient;
-var url = "mongodb://localhost:27017/";
+const MongoClient = require("mongodb").MongoClient;
+const url = 'mongodb://0.0.0.0:27017';
+
 
 
     //if anyone is reading this, ignore this function its for testing
     console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-    MongoClient.connect(url, function(err, db) {
+    MongoClient.connect(url, function(err, client) {
         console.log("bbbbbbbbbbbbbbbbbbbbbbbbbbb");
         if(err) {
             throw err;
         }
+        const db = client.db('testingdb');
         db.createCollection("post", function(err, res) {
             if(err) {
                 throw err;
@@ -17,8 +19,9 @@ var url = "mongodb://localhost:27017/";
             db.close();
         });
     });
+    console.log("file end!");
 
-
+    
     //from the creatPost file
     function addPost(jsonPost) {
         MongoClient.connect(url, function(err, db) {
