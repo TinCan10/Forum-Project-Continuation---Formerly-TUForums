@@ -79,7 +79,8 @@
       <h1>Welcome to the Create a Post Page!</h1>
     <!---Will add other form actions later just getting the functionality of the form for submission working. Will submit to the page for viewing posts.-->
     <div class="formContent">
-        <form name="postCreation" action="javascript:submit()">
+        <!---javascript:submit()-->
+        <form name="postCreation" action="/addPost" method="POST">
 
             <legend>Fill Out the Form to Create Your Post:</legend>
             <label for="username">Username: </label>
