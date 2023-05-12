@@ -21,6 +21,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 //Mongo Stuff
 //I had to follow the documentation on the mongodb website so it may look a little different from slides
 const {MongoClient, ServerApiVersion} = require("mongodb");
+const ObjectID = require('mongodb').ObjectId;
 const url = "mongodb+srv://TUForumsUName:TUForumsPassword@tuforumscluster.exn9qbx.mongodb.net/test";
 const client = new MongoClient(url, {
     serverApi: {
@@ -47,6 +48,7 @@ async function insertPost(doc) {
 
 
 
+
 app.post('/addPost', function(req, res) {
     var doc = {
         username: req.body.username,
@@ -59,6 +61,20 @@ app.post('/addPost', function(req, res) {
     res.send("inserted");
 });
 
+app.get('/getPost', function(req,res){
+    console.log("requested document = "+req.query.id);
+    let id = new ObjectID(req.query.id);
+    postColl.findOne({_id: id}).then(res2 => {
+        console.log("found document = "+res2);
+        res.json(res2);
+    })
+})
+
+app.get('/getPostList',async(req,res)=>{
+    let results = await postColl.find().toArray();
+    res.send(results);
+})
+
 app.get('/', function(req, res) {
     res.sendFile(__dirname + "/app/html/index.html");
 });
@@ -69,6 +85,10 @@ app.get('/index.html', function(req, res) {
 
 app.get('/createPost.html', function(req, res) {
     res.sendFile(__dirname + "/app/html/createPost.html");
+});
+
+app.get('/viewPost.html', function(req, res) {
+    res.sendFile(__dirname + "/app/html/viewPost.html");
 });
 
 app.listen(port, function() {

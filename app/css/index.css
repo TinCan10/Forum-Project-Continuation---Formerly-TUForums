@@ -97,6 +97,13 @@ body {
 
 /* CSS for table by Carmen Nash */
 
+.boxed{
+    border: 2px solid #FFBB00; 
+    border-radius: 2px;
+}
+
+/* possibly deprecated??? */
+
 .forum_head{
     display: flex;
     padding: 5px;
