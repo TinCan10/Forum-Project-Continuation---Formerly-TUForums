@@ -1,0 +1,157 @@
+.App {
+  text-align: center;
+}
+
+
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+/* CSS for sidebar by Josh */
+
+#sidebar {
+  color: #FFBB00;
+  background-color: #FFBB00;
+}
+
+a {
+  display: block;
+  font-size: 1.8em;
+  padding: 0.5em;
+}
+
+#openSidebar {
+  line-height: 12px;
+  position:relative;
+  background-color: #FFBB00;
+  outline-color: #FFBB00;
+  width:fit-content;
+  height:fit-content;
+  color:black;
+  float: left;
+}
+
+
+
+/* CSS for site by Christopher Solano */
+
+body {
+  background-color: grey;
+}
+.container{
+  display: flex;
+}
+
+.info {
+  top: 100px;
+  height: 400px;
+  background-color: #FFBB00;
+  border-radius: 24px;
+  padding: 3px 20px 10px 20px;
+  position: relative;
+  flex-basis: 200px;
+  margin-right: 100px;
+ 
+}
+
+.info p {
+  text-align: left;
+  font-size: 22px;
+  line-height: 1.5;
+}
+.info p:first-child {
+  font-size: 21px;
+}
+
+.forumTable table {
+  border: 1px solid;
+  width: 50%;
+  text-align: center;
+}
+
+.forumTable th{
+  background-color: #FFBB00;
+}
+
+.forumTable tr {
+  background-color: lightgreen;
+  height: 50px;
+}
+
+.forumTable h1 {
+  margin-left: 50px;
+}
+
+.forumTable {
+ flex: 1;
+ margin-left: 300px;
+ justify-content: center;
+ align-content: center;
+}
+
+.sb {
+  margin-top: 50px;
+}
+
+#bar {
+  width: 70%;
+  height: min-content;
+  background-color: #FFBB00;
+}
+
+.barColor {
+  background-color: #FFBB00;
+}
+
+
+/* CSS for table by Carmen Nash */
+
+.forum_head{
+  display: flex;
+  padding: 5px;
+  margin: 0px;
+  background-color: #ffB800;
+}
+.forum_head .sort_by{
+  flex: 25%;
+}
+.forum_head .sort_element{
+  flex: 5%;
+  font-weight: bold;
+}
+
+.forum_container{
+  padding: 5px;
+  margin: 0px;
+  background-color: #A59E98;
+}
+.forum_post{
+  display: flex;
+}
+.forum_post div{
+  padding: 5px;
+  margin: 2px;
+  background-color: #B0B98F;
+}
+
+.forum_post .post_name{
+  flex: 5%
+}
+.forum_post .post_title{
+  flex: 70%
+}
+.forum_post .post_subject{
+  flex: 20%
+}
+.forum_post .post_replies{
+  flex: 5%
+}
+
