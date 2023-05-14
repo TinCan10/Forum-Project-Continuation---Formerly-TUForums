@@ -1,6 +1,6 @@
 import React from "react";
 import './Hub.css';
-
+import Navbar from './navbar.js'; 
 
 
 function Hub() {
@@ -35,30 +35,45 @@ function Hub() {
         setPosts(oldPosts);
     }
 
-    return (
-        <div class="container">
-            <div class="forumTable">
-                <h1>Welcome to TU Forum, Tigers!</h1>
-                <div class="forum_head">
-                    <div name="sort_by">
-                        Sort By: 
-                    </div>
-                    <div class="sort_element"><h1 onClick={() => newP()} id="sort_new">New</h1></div>
-                    <div class="sort_element"><h1 onClick={() => oldP()} id="sort_old">Old</h1></div>
+    function mapPost() {
+        const fullPosts = posts.map(  
+            (element) => {
+            return (
+                <div class="forum_post">
+                    <div class="post_name">{element.username}</div>
+                    <div class="post_title">{element.title}</div>
+                    <div class="post_subject">{element.subject}</div>
                 </div>
-                <div class="forum_container" id="forum_container">
-                    {
-                        posts.map(  
-                            (element) => {
-                            return (
-                                <div class="forum_post">
-                                    <div class="post_name">{element.username}</div>
-                                    <div class="post_title">{element.title}</div>
-                                    <div class="post_subject">{element.subject}</div>
-                                </div>
-                            )
-                        })
-                    } 
+            )
+        });
+
+        return fullPosts
+    }
+
+    function forumHead() {
+        const head = (
+            <div class="forum_head">
+                <div name="sort_by">
+                    Sort By: 
+                </div>
+                <div class="sort_element"><h1 onClick={() => newP()} id="sort_new">New</h1></div>
+                <div class="sort_element"><h1 onClick={() => oldP()} id="sort_old">Old</h1></div>
+            </div>
+        );
+        return head;
+    }
+
+    return (
+        <div>
+            
+            <div class="container">
+                <Navbar />
+                <div class="forumTable">
+                    <h1>Welcome to TU Forum, Tigers!</h1>
+                    {forumHead()}
+                    <div class="forum_container" id="forum_container">
+                        {mapPost()}
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,23 +1,20 @@
 import React from "react";
+import {Outlet, Link} from "react-router-dom";
 
 function sideBar() {
     return (
 
-        <div class="offcanvas offcanvas-start" id="sidebar">
-        <div class="offcanvas-header">
-          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+        <div class="info">
+            <p>*User Goes Here*</p>
+            <p>Account Info</p>
+            <nav>
+                <Link to='/Create'>Create Thread</Link>
+            </nav>
+            <p>Favortie Thread</p>
+            <p>Current News</p>
+            <p>Site Rules</p>
+            <p>Options</p>
         </div>
-        <div id="help" class="offcanvas-body">
-            <div class="info">
-                <a href="index.html">Home</a>
-                <a href="#">Account Info</a>
-                <a href="#">Create Post</a>
-                <a href="#">Favorite Posts</a>
-                <a href="#">Site Rules</a>
-                <a href="#">Options</a>
-            </div>
-        </div>
-    </div>
 
     ); 
 }

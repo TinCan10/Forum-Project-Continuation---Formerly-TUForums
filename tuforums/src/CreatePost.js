@@ -1,26 +1,25 @@
-import createPost from './createPostForm';
+import CreatePostForm from './createPostForm';
 import './CreatePost.css';
-import sideBar from './navbar.js'; 
-import './logo192.png';
-import './logo512.png';
+import SideBar from './navbar.js'; 
 
 
 
-function CreatePost() {
+
+const CreatePost = () => {
   return (
     <div className="App">
       <header className="App-header">
        
       <title> TU Forum </title>
 
-       <sideBar />
+       <SideBar />
 
-       <createPost />
+       <CreatePostForm />
 
 
       </header>
     </div>
   );
-}
+};
 
 export default CreatePost;
