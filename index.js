@@ -1,14 +1,8 @@
-/*
-TODO:
-    -Create separate file for different routes
-    -Finish rest of database
-    -Alter the current html files so everything works with mongo
-*/
 
 //express stuff
 const express = require("express");
 const bodyParser = require("body-parser");
-const port = 3000;
+const port = process.env.PORT || 3001;
 const app = express();
 
 
@@ -47,7 +41,11 @@ async function insertPost(doc) {
 
 
 
-
+app.get('/reactIndex',async(req,res)=>{
+    let results = await postColl.find().toArray();
+    results.forEach(doc => console.log(doc));
+    res.send(results);
+})
 
 app.post('/addPost', function(req, res) {
     var doc = {
@@ -92,5 +90,5 @@ app.get('/viewPost.html', function(req, res) {
 });
 
 app.listen(port, function() {
-    console.log("listening on port 3000");
+    console.log("listening on port " + port.toString());
 })
