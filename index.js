@@ -54,7 +54,7 @@ app.post('/addPost', function(req, res) {
         subject: req.body.post_subject,
         content: req.body.postContent
     }
-    
+    console.log(doc + " AAAAAAAAAAAAAAAAAAAAAAA")
     insertPost(doc);
     res.send("inserted");
 });

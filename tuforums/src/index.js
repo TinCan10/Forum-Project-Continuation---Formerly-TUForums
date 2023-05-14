@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import Hub from './Hub';
-import Create from './CreatePost'
+import CreatePost from './CreatePost'
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
@@ -10,9 +10,8 @@ export default function App() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Hub />}>
-                <Route path='Create' element={<Create />}/>
-                </Route>
+                <Route exact path="/" element={<Hub />}/>
+                <Route path="/Create" element={<CreatePost />}/>
             </Routes>
         </BrowserRouter>
     )
