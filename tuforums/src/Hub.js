@@ -1,8 +1,13 @@
 import React from "react";
 import './App.css';
 
+
+
 function Hub() {
     const [posts, setPosts] = React.useState([]);
+    const [newPosts, setNewPosts] = React.useState([]);
+    const [oldPosts, setOldPosts] = React.useState([]);
+    const [replyPosts, setsReplyPosts] = React.useState([]);
   
     React.useEffect(() => {
       fetch('/reactIndex')
@@ -10,6 +15,27 @@ function Hub() {
         .then(posts => setPosts(posts));
     }, []);  
   
+
+    React.useEffect(() => {
+        fetch('/reactIndex')
+            .then(res => res.json()) 
+            .then(newPosts => setNewPosts(newPosts.reverse()));
+    }, []);
+
+    React.useEffect(() => {
+        fetch('/reactIndex')
+            .then(res => res.json()) 
+            .then(posts => setOldPosts(posts));
+    }, []);
+
+    function newP() {
+        setPosts(newPosts);
+    }
+
+    function oldP() {
+        setPosts(oldPosts);
+    }
+
     return (
         <div class="container">
             <div class="forumTable">
@@ -18,13 +44,13 @@ function Hub() {
                     <div name="sort_by">
                         Sort By: 
                     </div>
-                    <div class="sort_element"><a href="index.html?sort=new" id="sort_new">New</a></div>
-                    <div class="sort_element"><a href="index.html?sort=replies" id="sort_replies">Replies</a></div>
-                    <div class="sort_element"><a href="index.html?sort=old" id="sort_old">Old</a></div>
+                    <div class="sort_element"><h1 onClick={() => newP()} id="sort_new">New</h1></div>
+                    <div class="sort_element"><h1 id="sort_replies">Replies</h1></div>
+                    <div class="sort_element"><h1 onClick={() => oldP()} id="sort_old">Old</h1></div>
                 </div>
                 <div class="forum_container" id="forum_container">
                     {
-                        posts.map( 
+                        posts.map(  
                             (element) => {
                             return (
                                 <div class="forum_post">
