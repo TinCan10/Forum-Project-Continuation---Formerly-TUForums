@@ -1,12 +1,12 @@
 import createPost from './createPostForm';
-import './App.css';
+import './CreatePost.css';
 import sideBar from './navbar.js'; 
 import './logo192.png';
 import './logo512.png';
 
 
 
-function App() {
+function CreatePost() {
   return (
     <div className="App">
       <header className="App-header">
@@ -23,4 +23,4 @@ function App() {
   );
 }
 
-export default App;
+export default CreatePost;
