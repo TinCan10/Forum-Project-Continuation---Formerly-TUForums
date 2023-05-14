@@ -1,7 +1,7 @@
 import React from "react";
 import './App.css';
 
-function App() {
+function Hub() {
     const [posts, setPosts] = React.useState([]);
   
     React.useEffect(() => {
@@ -42,4 +42,4 @@ function App() {
 }
   
 
-export default App;
+export default Hub;
