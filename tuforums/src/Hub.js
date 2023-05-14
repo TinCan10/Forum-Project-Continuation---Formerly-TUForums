@@ -1,5 +1,5 @@
 import React from "react";
-import './App.css';
+import './Hub.css';
 
 
 
@@ -7,7 +7,6 @@ function Hub() {
     const [posts, setPosts] = React.useState([]);
     const [newPosts, setNewPosts] = React.useState([]);
     const [oldPosts, setOldPosts] = React.useState([]);
-    const [replyPosts, setsReplyPosts] = React.useState([]);
   
     React.useEffect(() => {
       fetch('/reactIndex')
@@ -45,7 +44,6 @@ function Hub() {
                         Sort By: 
                     </div>
                     <div class="sort_element"><h1 onClick={() => newP()} id="sort_new">New</h1></div>
-                    <div class="sort_element"><h1 id="sort_replies">Replies</h1></div>
                     <div class="sort_element"><h1 onClick={() => oldP()} id="sort_old">Old</h1></div>
                 </div>
                 <div class="forum_container" id="forum_container">
@@ -60,7 +58,7 @@ function Hub() {
                                 </div>
                             )
                         })
-                    }
+                    } 
                 </div>
             </div>
         </div>
