@@ -1,5 +1,5 @@
 form {
-  border: 4px solid gray;
+  border: 4px solid yellow;
 }
 
 input[type=text], input[type=password] {
@@ -39,8 +39,10 @@ span.createPost {
   float: right;
   padding-top: 20px;
 }
-
-@media screen and (max-width: 310px) {
+body {
+        background-color: gray;
+      }
+@media screen and (max-width: 300px) {
   span.createPost {
     display: block;
     float: none;
@@ -49,4 +51,3 @@ span.createPost {
     width: 100%;
   }
   }
-}
