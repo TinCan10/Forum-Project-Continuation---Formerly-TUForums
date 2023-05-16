@@ -29,10 +29,12 @@ function Hub() {
 
     function newP() {
         setPosts(newPosts);
+        console.log("new posts");
     }
 
     function oldP() {
         setPosts(oldPosts);
+        console.log("old posts");
     }
 
     function mapPost() {
