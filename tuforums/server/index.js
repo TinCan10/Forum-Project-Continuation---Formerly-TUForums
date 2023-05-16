@@ -1,9 +1,11 @@
+require('dotenv').config();
 
 //express stuff
 const express = require("express");
 const bodyParser = require("body-parser");
 const port = process.env.PORT || 3001;
 const app = express();
+
 
 
 app.use(express.static(__dirname + "/app/css"));
@@ -16,7 +18,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 //I had to follow the documentation on the mongodb website so it may look a little different from slides
 const {MongoClient, ServerApiVersion} = require("mongodb");
 const ObjectID = require('mongodb').ObjectId;
-const url = "mongodb+srv://TUForumsUName:TUForumsPassword@tuforumscluster.exn9qbx.mongodb.net/test";
+const url = process.env.MONGOURL;
 const client = new MongoClient(url, {
     serverApi: {
         version: ServerApiVersion.v1,
@@ -89,6 +91,9 @@ app.get('/viewPost.html', function(req, res) {
     res.sendFile(__dirname + "/app/html/viewPost.html");
 });
 
-app.listen(port, function() {
-    console.log("listening on port " + port.toString());
-})
+
+if(process.env.PORT) {
+    app.listen(port, function() {
+        console.log("listening on port " + port);
+    });
+}
