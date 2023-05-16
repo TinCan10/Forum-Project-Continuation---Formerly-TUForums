@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 //I had to follow the documentation on the mongodb website so it may look a little different from slides
 const {MongoClient, ServerApiVersion} = require("mongodb");
 const ObjectID = require('mongodb').ObjectId;
-const url = "mongodb+srv://TUForumsUName:TUForumsPassword@tuforumscluster.exn9qbx.mongodb.net/test";
+const url = process.env.MONGOURI;
 const client = new MongoClient(url, {
     serverApi: {
         version: ServerApiVersion.v1,
