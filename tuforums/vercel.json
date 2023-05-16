@@ -2,8 +2,7 @@
     "rewrites": [
         {
             "source": "/(.*)",
-            "destination": "/api/index.js",
-            "methods": ["GET", "POST", "PUT", "OPTION"]
+            "destination": "/api/index.js"
         }
     ]
 }
