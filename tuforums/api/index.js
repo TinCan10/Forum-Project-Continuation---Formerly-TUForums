@@ -15,7 +15,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 //Mongo Stuff
-//I had to follow the documentation on the mongodb website so it may look a little different from slides
 const {MongoClient, ServerApiVersion} = require("mongodb");
 const ObjectID = require('mongodb').ObjectId;
 const url = process.env.MONGODB_URI || "mongodb://localhost:27017/";
@@ -56,7 +55,6 @@ app.post('/addPost', function(req, res) {
         subject: req.body.subject,
         content: req.body.content
     }
-    console.log(doc + " AAAAAAAAAAAAAAAAAAAAAAA")
     insertPost(doc);
     res.send("inserted");
 });
@@ -77,18 +75,6 @@ app.get('/getPostList',async(req,res)=>{
 
 app.get('/', function(req, res) {
     res.sendFile(__dirname + "/app/html/index.html");
-});
-
-app.get('/index.html', function(req, res) {
-    res.sendFile(__dirname + "/app/html/index.html");
-});
-
-app.get('/createPost.html', function(req, res) {
-    res.sendFile(__dirname + "/app/html/createPost.html");
-});
-
-app.get('/viewPost.html', function(req, res) {
-    res.sendFile(__dirname + "/app/html/viewPost.html");
 });
 
 app.listen(port, function() {
