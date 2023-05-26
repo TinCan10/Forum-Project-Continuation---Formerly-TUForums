@@ -1,5 +1,5 @@
-# COSC484Group5
-This is COSC484 Group 5's code for the TU Forum
+# TUForums
+This is the repository for TUForums
 
 To start run the index.js in the tuforums/api folder and then enter tuforums and run npm start.
 
