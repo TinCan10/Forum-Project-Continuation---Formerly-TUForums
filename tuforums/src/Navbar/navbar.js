@@ -1,6 +1,6 @@
 import React from "react";
 import {Outlet, Link} from "react-router-dom";
-import Create from "./CreatePost"
+import Create from "../CreatePost/CreatePost"
 
 function sideBar() {
     return (

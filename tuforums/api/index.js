@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 //I had to follow the documentation on the mongodb website so it may look a little different from slides
 const {MongoClient, ServerApiVersion} = require("mongodb");
 const ObjectID = require('mongodb').ObjectId;
-const url = process.env.MONGODB_URI;
+const url = process.env.MONGODB_URI || "mongodb://localhost:27017/";
 const client = new MongoClient(url, {
     serverApi: {
         version: ServerApiVersion.v1,
@@ -27,9 +27,9 @@ const client = new MongoClient(url, {
     }
 });
 
-const mydb = client.db("TUForumsPosting");
-const postColl = mydb.collection("Post");
-const commentColl = mydb.collection("Comment");
+const mydb = client.db("TUForum");
+const postColl = mydb.collection("post");
+const commentColl = mydb.collection("comment");
 
 //functions for mongodb
 async function insertPost(doc) {
@@ -52,9 +52,9 @@ app.get('/reactIndex',async(req,res)=>{
 app.post('/addPost', function(req, res) {
     var doc = {
         username: req.body.username,
-        title: req.body.postTitle,
-        subject: req.body.post_subject,
-        content: req.body.postContent
+        title: req.body.title,
+        subject: req.body.subject,
+        content: req.body.content
     }
     console.log(doc + " AAAAAAAAAAAAAAAAAAAAAAA")
     insertPost(doc);
@@ -91,9 +91,7 @@ app.get('/viewPost.html', function(req, res) {
     res.sendFile(__dirname + "/app/html/viewPost.html");
 });
 
+app.listen(port, function() {
+    console.log("listening on port " + port);
+});
 
-if(process.env.PORT) {
-    app.listen(port, function() {
-        console.log("listening on port " + port);
-    });
-}

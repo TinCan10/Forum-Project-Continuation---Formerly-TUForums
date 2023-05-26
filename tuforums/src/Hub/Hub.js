@@ -1,6 +1,6 @@
 import React from "react";
 import './Hub.css';
-import Navbar from './navbar.js'; 
+import Navbar from '../Navbar/navbar.js'; 
 
 
 function Hub() {

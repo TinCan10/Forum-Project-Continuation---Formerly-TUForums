@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Hub from './Hub';
-import CreatePost from './CreatePost'
+import Hub from './Hub/Hub.js';
+import CreatePost from './CreatePost/CreatePost'
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
