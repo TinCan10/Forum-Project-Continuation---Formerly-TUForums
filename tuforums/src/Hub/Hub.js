@@ -71,7 +71,7 @@ function Hub() {
             <div class="container">
                 <Navbar />
                 <div class="forumTable">
-                    <h1>Welcome to TU Forum, Tigers!</h1>
+                    <h1>Welcome to StudentForums!</h1>
                     {forumHead()}
                     <div class="forum_container" id="forum_container">
                         {mapPost()}
