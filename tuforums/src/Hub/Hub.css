@@ -1,83 +1,23 @@
-/* CSS for sidebar by Josh */
-
-#sidebar {
-    color: #FFBB00;
-    background-color: #FFBB00;
-}
-
-a {
-    display: block;
-    font-size: 1.8em;
-    padding: 0.5em;
-}
-
-#openSidebar {
-    line-height: 12px;
-    position:relative;
-    background-color: #FFBB00;
-    outline-color: #FFBB00;
-    width:fit-content;
-    height:fit-content;
-    color:black;
-    float: left;
-}
-
-
-
 /* CSS for site by Christopher Solano */
 
 body {
-    background-color: grey;
+    background-color: gray;
 }
 .container{
     display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-right: 300px;
 }
 
-.info {
-    top: 100px;
-    height: 400px;
-    background-color: #FFBB00;
-    border-radius: 24px;
-    padding: 3px 20px 10px 20px;
-    position: relative;
-    flex-basis: 200px;
-    margin-right: 100px;
-   
-}
-
-.info p {
-    text-align: left;
-    font-size: 22px;
-    line-height: 1.5;
-}
-.info p:first-child {
-    font-size: 21px;
-}
-
-.forumTable table {
-    border: 1px solid;
-    width: 50%;
-    text-align: center;
-}
-
-.forumTable th{
-    background-color: #FFBB00;
-}
-
-.forumTable tr {
-    background-color: lightgreen;
-    height: 50px;
-}
-
-.forumTable h1 {
-    margin-left: 50px;
-}
 
 .forumTable {
    flex: 1;
    margin-left: 300px;
    justify-content: center;
    align-content: center;
+   display: inline;
+   width: 300px;
 }
 
 .sb {
