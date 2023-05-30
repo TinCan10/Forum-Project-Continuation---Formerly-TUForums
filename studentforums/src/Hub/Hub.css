@@ -1,0 +1,86 @@
+/* CSS for site by Christopher Solano */
+
+body {
+    background-color: gray;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-right: 300px;
+}
+
+
+.forumTable {
+   flex: 1;
+   margin-left: 300px;
+   justify-content: center;
+   align-content: center;
+   display: inline;
+   width: 300px;
+}
+
+.sb {
+    margin-top: 50px;
+}
+
+#bar {
+    width: 70%;
+    height: min-content;
+    background-color: #FFBB00;
+}
+
+.barColor {
+    background-color: #FFBB00;
+}
+
+
+/* CSS for table by Carmen Nash */
+
+.boxed{
+    border: 2px solid #FFBB00; 
+    border-radius: 2px;
+}
+
+/* possibly deprecated??? */
+
+.forum_head{
+    display: flex;
+    padding: 5px;
+    margin: 0px;
+    background-color: #ffB800;
+}
+.forum_head .sort_by{
+    flex: 25%;
+}
+.forum_head .sort_element{
+    flex: 5%;
+    font-weight: bold;
+}
+
+.forum_container{
+    padding: 5px;
+    margin: 0px;
+    background-color: #A59E98;
+}
+.forum_post{
+    display: flex;
+}
+.forum_post div{
+    padding: 5px;
+    margin: 2px;
+    background-color: #B0B98F;
+}
+
+.forum_post .post_name{
+    flex: 5%
+}
+.forum_post .post_title{
+    flex: 70%
+}
+.forum_post .post_subject{
+    flex: 20%
+}
+.forum_post .post_replies{
+    flex: 5%
+}
