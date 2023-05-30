@@ -1,7 +1,7 @@
 import './CreatePost.css';
 //import SideBar from './navbar.js'; 
 import React from "react";
-
+import axios from 'axios';
 
 
 class CreatePost extends React.Component {
@@ -36,15 +36,25 @@ class CreatePost extends React.Component {
 
  
     submitForm() {
-        fetch("/addPost", {
-            method: 'POST'
-        });
+ 
+        axios.post('/addPost', this.state)
+            .then((res) => {
+                console.log(res.data);
+            })
+            .catch(err => {
+                console.log(err);
+            });
     }
 
     render() {
         return(
-            <div class="formContent">
-                <form name="postCreation" onSubmit={this.submitForm}>
+            <div className="formContent">
+                <form name="postCreation" onSubmit={
+                    (e) => {
+                        e.preventDefault();
+                        this.submitForm();
+                    }
+                }>
             
                     <legend>Fill Out the Form to Create Your Post:</legend>
                     <label for="username">Username: </label>
